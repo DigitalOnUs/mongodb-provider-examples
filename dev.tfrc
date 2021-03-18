@@ -1,0 +1,16 @@
+provider_installation {
+
+  # For custom dev testing set the file to your working directory
+  # for the provider plugin
+  # use the environment variable 
+  # export TF_CLI_CONFIG_FILE=/opt/mongo/dev.tfrc
+
+  dev_overrides {
+    "mongodb/mongodbatlas" = "/opt/mongo/terraform-provider-mongodbatlas"
+  }
+
+  # For all other providers, install them directly from their origin provider
+  # registries as normal. If you omit this, Terraform will _only_ use
+  # the dev_overrides block, and so no other providers will be available.
+  direct {}
+}
